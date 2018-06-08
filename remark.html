@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Remark</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import
+      url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      
+
+      body { font-family: 'Yanone Kaffeesatz'; 
+        font-size: 1.5em;}
+      h1, h2, h3, h4 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { 
+            font-size: 24px;
+            font-family: 'Ubuntu Mono'; 
+      }
+
+     .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+
+      .remark-slide-content {
+        font-size: 150%;
+      }
+
+      .footer {position: absolute; bottom: 12px; right: 20px; opacity:
+      0.8} 
+
+	.casual { font-family: 'Indie Flower';
+       font-size: 1.5em;}
+    </style>
+
+<style>
+table.greenTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 6px solid #213594;
+  background-color: #E4E7EE;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+table.greenTable td, table.greenTable th {
+  border: 1px solid #3B4D94;
+  padding: 3px 2px;
+}
+table.greenTable tbody td {
+  font-size: 13px;
+}
+table.greenTable thead {
+  background: #1E2694;
+  background: -moz-linear-gradient(top, #565caf 0%, #343b9e 66%, #1E2694 100%);
+  background: -webkit-linear-gradient(top, #565caf 0%, #343b9e 66%, #1E2694 100%);
+</style>
+
+
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# Remark 
+
+## A Template for Remark.js
+
+### Martin Schweitzer
+---
+# Slides
+
+## Requirements
+
+A place for notes about creating slides with Remark.js
+
+* https://gnab.github.io/remark/downloads/remark-latest.min.js
+
+---
+
+# Basics
+
+## Uses basic markdown
+
+E.g.
+
+* `*` for Itemised lists
+* `#` for header
+* `##` for subheader
+* `###` for subsubheader etc.
+* `_` for _Emphasis_
+* `**` for **More Emphasis**
+
+---
+
+# Can use html tags anywhere in markdown
+
+For example:
+
+```
+<table class="greenTable">
+<tr><th> Property</th> <th> Value</th> </tr>
+<tr><td> Mean of <i>x</i> </td><td> 9</td> </tr>
+<tr><td>Sample variance of <i>x</i> </td>
+<td>11</td> </tr>
+<tr><td> Mean of <i>y</i></td><td> 7.50</td> </tr>
+<tr><td>Sample variance of <i>y</i></td><td>4.125</td></tr> 
+<tr><td>Correlation between 
+<i>x</i> and <i>y</i> </td><td> 0.816</td> </tr>
+<tr> <td>Linear regression line </td>
+<td> <i>y</i> = 3.00 + 0.500 <i>x</i></td> </tr>
+</table>
+```
+---
+
+# Gives...
+
+<table class="greenTable">
+<tr><th> Property</th> <th> Value</th> </tr>
+<tr><td> Mean of <i>x</i> </td><td> 9</td> </tr>
+<tr><td>Sample variance of <i>x</i> </td>
+<td>11</td> </tr>
+<tr><td> Mean of <i>y</i></td><td> 7.50</td> </tr>
+<tr><td>Sample variance of <i>y</i></td><td>4.125</td></tr>
+<tr><td>Correlation between
+<i>x</i> and <i>y</i> </td><td> 0.816</td> </tr>
+<tr> <td>Linear regression line </td>
+<td> <i>y</i> = 3.00 + 0.500 <i>x</i></td> </tr>
+</table>
+
+
+---
+
+# Images
+
+Images can be inserted using Markup or HTML
+
+`<img src="daffodil.jpg" width="50%">`
+
+<img src="daffodil.jpg" width="50%">
+
+
+---
+
+# Code
+
+## Code can be inserted using triple backticks 
+
+The following 
+
+````
+```python
+def minmax(a):
+    return min(a) + max(a)
+```
+````
+
+---
+
+# Will be rendered as
+
+```python
+def minmax(a):
+        return min(a) + max(a)
+```
+---
+
+# Highlighting code
+
+To highlight a line of code, e.g.
+
+```python
+for line in open('gaz_mini.csv'):
+    trg = line.split(',')[1]        
+*   if hamming(name, trg) < 2:
+        print line.strip()
+```
+
+Put an asterisk in front of the line and also set 'highlightLine' to true in the JavaScript.  I.e.
+
+```
+slideshow = remark.create({highlightLines: true,
+...
+
+```
+
+---
+
+# Remove slide numbers
+
+Modify the initialisation code as follows:
+
+```
+var slideshow = remark.create({
+    ...
+    slideNumberFormat: ''});
+    ...
+```
+
+---
+
+# Add fonts
+
+* Find a font - I usually go to fonts.google.com
+
+* Include it.  In the styles at the top add:
+
+```
+@import url(https://fonts.googleapis.com/css?family=Indie+Flower:400,700);
+```
+
+* Create a style using the font
+
+* Use it
+
+<span class="casual">This is Indie Flower</span>
+
+---
+
+# Mathematics
+
+1. This is an inline integral: `\(\int_a^bf(x)dx\)`
+
+--
+
+2. More `\(x={a \over b}\)` formulae.
+
+--
+
+3. Display formula:
+
+$$e^{i\pi} + 1 = 0$$
+
+---
+
+# Mathematics - Using MathJax
+
+```
+<script src="https://cdnjs.cloudflare.com/ajax/libs/
+mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML&
+delayStartupUntil=configured" type="text/javascript">
+</script>
+<script type="text/javascript">
+      var slideshow = remark.create();
+
+      // Setup MathJax
+      MathJax.Hub.Config({
+          tex2jax: {
+          skipTags: ['script', 'noscript', 'style', 
+                     'textarea', 'pre']
+          }
+      });
+
+      MathJax.Hub.Configured();
+</script>
+```
+
+
+
+---
+# The End
+---
+    </textarea>
+    <!--script
+    src="https://gnab.github.io/remark/downloads/remark-latest.min.js"-->
+    <script src="remark-latest.min.js">
+    </script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured"
+    type="text/javascript">
+
+    </script>
+    <script>
+        var slideshow = remark.create({highlightLines: true, 
+		slideNumberFormat: ''});
+
+		// Setup MathJax
+      	MathJax.Hub.Config({
+        	tex2jax: {
+          	skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+          	}
+      	});
+
+      	MathJax.Hub.Configured();
+    </script>
+  </body>
+</html>

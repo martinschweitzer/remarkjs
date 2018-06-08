@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Minimal</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import
+      url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      
+
+      body { font-family: 'Yanone Kaffeesatz'; 
+        font-size: 1.5em;}
+      h1, h2, h3, h4 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { 
+            font-size: 24px;
+            font-family: 'Ubuntu Mono'; 
+      }
+
+     .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+
+      .remark-slide-content {
+        font-size: 150%;
+      }
+
+      .footer {position: absolute; bottom: 12px; right: 20px; opacity:
+      0.8} 
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# Minimal 
+
+## A Minimal Template for Remark.js
+
+### Martin Schweitzer
+---
+# Slides
+
+## Requirements
+
+* https://gnab.github.io/remark/downloads/remark-latest.min.js
+---
+The End
+---
+    </textarea>
+    <!--script
+    src="https://gnab.github.io/remark/downloads/remark-latest.min.js"-->
+    <script src="remark-latest.min.js">
+    </script>
+
+    <script>
+        var slideshow = remark.create({highlightLines: true, 
+		slideNumberFormat: ''});
+    </script>
+  </body>
+</html>
